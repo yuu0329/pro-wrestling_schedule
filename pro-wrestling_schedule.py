@@ -20,8 +20,6 @@ while True:
     events = soup.find_all('div',class_='eventInfo')
     next_page = soup.find('li',class_='next')
 
-    print(next_page)
-
     with open('njpw_events.csv','a',encoding='utf_8_sig') as f:
 
         writer = csv.writer(f)
@@ -35,8 +33,7 @@ while True:
             row.append(place)
 
             writer.writerow(row)
-    
-    
+
     if bool(next_page) == False:
         break
     
